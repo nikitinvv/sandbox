@@ -55,6 +55,7 @@ def set_pso_not_ok(rotation_start, num_angles, rotation_step):
     calc_rotation_start = control_pvs['PSOstartPos'].value
     calc_rotation_stop = control_pvs['PSOendPos'].value
     calc_rotation_step = control_pvs['PSOscanDelta'].value
+    time.sleep(5) # Per Tim suggestion
     calc_num_angles = control_pvs['PSOcalcProjections'].value
 
     print('start entered/calculated', rotation_start, calc_rotation_start)
