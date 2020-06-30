@@ -49,12 +49,6 @@ def set_pso(rotation_start, num_angles, rotation_step):
     wait_pv(control_pvs['PSOendPos'], rotation_stop)
     control_pvs['PSOscanDelta'].put(rotation_step, wait=True)
     wait_pv(control_pvs['PSOscanDelta'], rotation_step)
-    control_pvs['PSOendPos'].put(rotation_stop, wait=True)
-    wait_pv(control_pvs['PSOendPos'], rotation_stop)
-    # time.sleep(1) # Per Tim suggestion
-    control_pvs['PSOcalcProjections'].put(num_angles, wait=True)
-    wait_pv(control_pvs['PSOcalcProjections'], num_angles)
-
 
     calc_rotation_start = control_pvs['PSOstartPos'].value
     calc_rotation_stop = control_pvs['PSOendPos'].value
@@ -69,7 +63,7 @@ def set_pso(rotation_start, num_angles, rotation_step):
     theta = []
     theta = control_pvs['ThetaArray'].get(count=int(num_angles))
     print('theta = ', theta)
-    
+
     return calc_num_angles, calc_rotation_step
 
 
