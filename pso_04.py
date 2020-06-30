@@ -51,7 +51,7 @@ def set_pso_ok(rotation_start, num_angles, rotation_step):
     wait_pv(control_pvs['PSOscanDelta'], rotation_step)
     control_pvs['PSOendPos'].put(rotation_stop, wait=True)
     wait_pv(control_pvs['PSOendPos'], rotation_stop)
-    time.sleep(1) # Per Tim suggestion
+    # time.sleep(1) # Per Tim suggestion
     control_pvs['PSOcalcProjections'].put(num_angles, wait=True)
     wait_pv(control_pvs['PSOcalcProjections'], num_angles)
 
