@@ -5,11 +5,26 @@ import matplotlib.pyplot as plt
 
 
 def interlaced_angle_sequence(nproj_total, nproj_per_rot, prime, continuous_angle=True):
+    """Generate a sequence of interlaced angled
 
-    # seq = np.array((nproj_total * nproj_per_rot))
+    Parameters
+    ----------
+    nproj_total : int
+        Number of total projections
+     nproj_per_rot : int
+        Nunber of projections in each rotation
+    prime : int
+        prime sequence index
+
+    Returns
+
+    theta : ndarray
+        1D numpy array containing the interlaced rotation angles
+    """
+
+
+
     seq = []
-    # nproj_per_rot = int(nproj_per_rot)
-    # print (len(seq))
     i = 0
 
     while len(seq) < nproj_total:
@@ -22,7 +37,6 @@ def interlaced_angle_sequence(nproj_total, nproj_per_rot, prime, continuous_angl
         while (b != 0):
             a = np.mod(b, prime)
             r += (a * q)
-            # print (b, r, a, q)
             q /= prime
             b = np.floor(b / prime)
         r *= (360.0 / nproj_per_rot)
