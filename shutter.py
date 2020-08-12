@@ -43,8 +43,6 @@ def set_pvs():
     epics_pvs['OpenShutterValue']     = PV('2bma:TomoScan:OpenShutterValue')
     # epics_pvs['ShutterStatusPVName']  = PV('2bma:TomoScan:ShutterStatusPVName')
 
-    CloseShutterPVName = epics_pvs['CloseShutterPVName'].get(as_string=True)
-    print(CloseShutterPVName)
     epics_pvs['CloseShutter']        = PV(epics_pvs['CloseShutterPVName'].get(as_string=True))
     epics_pvs['OpenShutter']         = PV(epics_pvs['OpenShutterPVName'].get(as_string=True))
     epics_pvs['ShutterStatus']       = PV('PA:02BM:STA_A_FES_OPEN_PL')
