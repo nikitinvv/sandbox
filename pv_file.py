@@ -121,7 +121,12 @@ def main():
     for pv_file in pv_files:
         read_pv_file(pv_file, macros)
         show_pvs()
-
+    print(config_pvs['OrthoX'])
+    print(config_pvs['OrthoX'].type)
+    print(config_pvs['OrthoX'].access)
+    print(config_pvs['OrthoX'].count)
+    print(config_pvs['OrthoX'].info)
+    print(config_pvs['OrthoX'].get())
 
 
 if __name__ == "__main__":
